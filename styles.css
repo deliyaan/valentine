@@ -1,0 +1,269 @@
+:root {
+  --lavender: #cdb4db;
+  --pink-light: #ffc8dd;
+  --pink-main: #ffafcc;
+  --blue-soft: #bde0fe;
+  --blue-main: #a2d2ff;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: "Quicksand", sans-serif;
+  color: var(--lavender);
+  background: linear-gradient(160deg, var(--pink-light), var(--blue-soft), var(--white));
+}
+
+body {
+  min-height: 100vh;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease;
+}
+
+.app,
+.success-page {
+  width: min(100%, 28rem);
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 1.25rem;
+  border-radius: 1.5rem;
+  background: #ffffffd9;
+  box-shadow: 0 1rem 2.25rem #a2d2ff96;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(1.7rem, 6vw, 2.2rem);
+  margin-bottom: 1.1rem;
+}
+
+.accordion-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1.35rem;
+}
+
+.accordion-item {
+  border-radius: 1rem;
+  background: linear-gradient(180deg, var(--pink-light), var(--white));
+  box-shadow: 0 0.5rem 1.15rem #cdb4db80;
+  overflow: hidden;
+}
+
+.accordion-button {
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+  color: var(--lavender);
+  font: inherit;
+  font-size: 1.03rem;
+  font-weight: 700;
+  padding: 0.9rem 1rem;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.accordion-button:hover,
+.accordion-button:focus-visible {
+  transform: scale(1.02);
+  box-shadow: inset 0 0 0.9rem #ffafcc99;
+  outline: none;
+}
+
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease, padding 0.35s ease;
+  padding: 0 0.95rem;
+}
+
+.accordion-content p {
+  overflow: hidden;
+  color: var(--lavender);
+  text-align: left;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.accordion-item.open .accordion-content {
+  grid-template-rows: 1fr;
+  padding-bottom: 0.85rem;
+}
+
+.question-box {
+  border-radius: 1rem;
+  background: linear-gradient(150deg, var(--blue-soft), var(--pink-light));
+  padding: 1rem;
+  box-shadow: 0 0.65rem 1.2rem #bde0fea8;
+}
+
+.question-box h2 {
+  margin-bottom: 0.9rem;
+  font-size: clamp(1.1rem, 4vw, 1.45rem);
+}
+
+.answer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+}
+
+.choice {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.7rem 1.4rem;
+  font: inherit;
+  font-weight: 700;
+  color: var(--white);
+  cursor: pointer;
+  box-shadow: 0 0.6rem 1rem #cdb4db7d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  touch-action: manipulation;
+}
+
+.choice:hover,
+.choice:focus-visible {
+  transform: scale(1.06);
+  box-shadow: 0 0 1rem #ffafcc;
+  outline: none;
+}
+
+.choice.yes {
+  background: linear-gradient(135deg, var(--pink-main), var(--lavender));
+}
+
+.choice.no {
+  background: linear-gradient(135deg, var(--blue-main), var(--lavender));
+}
+
+.please-text {
+  min-height: 1.3rem;
+  font-weight: 700;
+}
+
+.success-page {
+  min-height: 55vh;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.back-link {
+  text-decoration: none;
+  justify-self: center;
+}
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hearts::before,
+.hearts::after {
+  content: "💗 💖 💗 💞 💗";
+  position: absolute;
+  font-size: 1.25rem;
+  opacity: 0.65;
+  white-space: nowrap;
+  animation: floatHearts 13s linear infinite;
+}
+
+.hearts::after {
+  left: 25%;
+  font-size: 1.5rem;
+  animation-duration: 16s;
+  animation-delay: -8s;
+}
+
+.confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.confetti::before,
+.confetti::after {
+  content: "💖 💗 💕 💘 💓 💞";
+  position: absolute;
+  top: -8%;
+  left: 5%;
+  font-size: 1.45rem;
+  white-space: pre;
+  animation: confettiFall 5.2s linear infinite;
+}
+
+.confetti::after {
+  left: 45%;
+  animation-delay: -2.6s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatHearts {
+  from {
+    transform: translateY(105vh) translateX(-5vw);
+  }
+
+  to {
+    transform: translateY(-15vh) translateX(8vw);
+  }
+}
+
+@keyframes confettiFall {
+  from {
+    transform: translateY(-10vh) rotate(0deg);
+  }
+
+  to {
+    transform: translateY(110vh) rotate(18deg);
+  }
+}
+
+@media (min-width: 40rem) {
+  body {
+    padding: 1.5rem;
+  }
+
+  .app,
+  .success-page {
+    padding: 1.6rem;
+  }
+}
