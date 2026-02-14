@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffc8dd" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Valentine" />
+  <title>За что я тебя люблю?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="hearts" aria-hidden="true"></div>
+
+  <main class="app fade-in">
+    <h1>За что я тебя люблю?</h1>
+
+    <section class="accordion-list" aria-label="Причины любви">
+      <article class="accordion-item">
+        <button class="accordion-button" type="button" aria-expanded="false">
+          <span>💗 Твои глаза</span>
+        </button>
+        <div class="accordion-content">
+          <p>Я обожаю смотреть на твои глазки, в них можно утонуть 💗</p>
+        </div>
+      </article>
+
+      <article class="accordion-item">
+        <button class="accordion-button" type="button" aria-expanded="false">
+          <span>💗 Твоя улыбка</span>
+        </button>
+        <div class="accordion-content">
+          <p>Мне всегда становится очень весело, когда я вижу твою улыбку. Как будто становлюсь снова ребенком 💗</p>
+        </div>
+      </article>
+
+      <article class="accordion-item">
+        <button class="accordion-button" type="button" aria-expanded="false">
+          <span>💗 Твой позитив</span>
+        </button>
+        <div class="accordion-content">
+          <p>Когда у меня плохое настроение, ты наполняешь меня радостью и позитивом. Спасибо тебе! 💗</p>
+        </div>
+      </article>
+
+      <article class="accordion-item">
+        <button class="accordion-button" type="button" aria-expanded="false">
+          <span>💗 Твоя доброта</span>
+        </button>
+        <div class="accordion-content">
+          <p>Меня восхищает какой ты иногда милый и добрый, я начинаю представлять каким ты был бы прекрасным отцом 💗</p>
+        </div>
+      </article>
+
+      <article class="accordion-item">
+        <button class="accordion-button" type="button" aria-expanded="false">
+          <span>💗 Твоя любовь</span>
+        </button>
+        <div class="accordion-content">
+          <p>Нет ничего более насыщенного, прекраснее, чем твоей любви. Я благодарна за то, что ты даришь ее именно мне 💗</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="question-box">
+      <h2>Ты будешь моей валентинкой?</h2>
+      <div class="answer-buttons">
+        <button id="yesBtn" class="choice yes" type="button">Да</button>
+        <button id="noBtn" class="choice no" type="button">Нет</button>
+      </div>
+      <p id="pleaseText" class="please-text" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
